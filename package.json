@@ -1,0 +1,48 @@
+{
+    "name": "fmp-cli",
+    "version": "1.0.0",
+    "description": "CLI for using the ffmpeg-simpliied library.",
+    "source": "src/index.ts",
+    "main": "dist/main.js",
+    "bin": {
+        "fmp-cli": "./dist/index.js"
+    },
+    "type": "module",
+    "scripts": {
+        "start": "LOG_LEVEL=debug bun run src/index.ts",
+        "build": "NODE_ENV=production bun build src/index.ts --outdir dist --target node --packages=external",
+        "compile": "NODE_ENV=production bun build src/index.ts --target node --compile --outfile dist/fmp-cli",
+        "test": "vitest"
+    },
+    "files": [
+        "dist/index.js"
+    ],
+    "keywords": [
+        "ffmpeg",
+        "nodejs"
+    ],
+    "author": "Ragaeeb Haq",
+    "license": "MIT",
+    "dependencies": {
+        "ffmpeg-simplified": "^2.0.0",
+        "inquirer": "^12.3.2",
+        "mime-types": "^2.1.35",
+        "pino": "^9.6.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.18.0",
+        "@semantic-release/changelog": "^6.0.3",
+        "@types/eslint__js": "^8.42.3",
+        "@types/mime-types": "^2.1.4",
+        "@types/node": "^22.10.10",
+        "eslint": "^9.18.0",
+        "eslint-config-prettier": "^10.0.1",
+        "eslint-plugin-import": "^2.31.0",
+        "eslint-plugin-perfectionist": "^4.7.0",
+        "eslint-plugin-prettier": "^5.2.3",
+        "prettier": "^3.4.2",
+        "semantic-release": "^24.2.1",
+        "typescript-eslint": "^8.21.0",
+        "vitest": "^3.0.4"
+    }
+}
