@@ -1,17 +1,30 @@
 import { sliceAndMerge } from 'ffmpeg-simplified';
 import inquirer from 'inquirer';
+import fs from 'node:fs';
 import path from 'node:path';
 
 import logger from './logger.js';
 
+const sanitizeInput = (input: string) => input.trim().replace(/\\ /g, ' ');
+
 export const sliceAndMergeFlow = async (): Promise<string> => {
     const { inputFile } = await inquirer.prompt([
         {
-            filter: (input) => input.trim(),
+            filter: sanitizeInput,
             message: 'Enter the input media file path:',
             name: 'inputFile',
             type: 'input',
-            validate: (input) => (input ? true : 'Input file is required.'),
+            validate: (input) => {
+                if (!input) {
+                    return 'Input file is required.';
+                }
+
+                if (!fs.existsSync(sanitizeInput(input))) {
+                    return `${input} does not exist`;
+                }
+
+                return true;
+            },
         },
     ]);
 
