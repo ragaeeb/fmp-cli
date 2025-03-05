@@ -4,7 +4,6 @@
 [![Node.js CI](https://github.com/ragaeeb/fmp-cli/actions/workflows/build.yml/badge.svg)](https://github.com/ragaeeb/fmp-cli/actions/workflows/build.yml)
 ![GitHub License](https://img.shields.io/github/license/ragaeeb/fmp-cli)
 ![GitHub Release](https://img.shields.io/github/v/release/ragaeeb/fmp-cli)
-[![Size](https://deno.bundlejs.com/badge?q=fmp-cli@1.0.0&badge=detailed)](https://bundlejs.com/?q=fmp-cli%401.0.0)
 ![typescript](https://badgen.net/badge/icon/typescript?icon=typescript&label&color=blue)
 
 `fmp-cli` is a command-line interface built to interact with the [ffmpeg-simpliied](https://github.com/ragaeeb/ffmpeg-simpliied) library, which allows a CLI to perform common video manipulation.
@@ -35,7 +34,7 @@ bunx fmp-cli
 
 ## Requirements
 
-- **Node.js v22.0.0+**
+- **Node.js v23.0.0+**
 
 ## License
 
